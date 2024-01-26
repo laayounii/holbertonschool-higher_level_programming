@@ -8,4 +8,3 @@ elif number > 0:
         print("is positive")
 else:
       print("is zero")        
-
