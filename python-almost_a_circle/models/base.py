@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from json import dumps, loads
 class Base:
     __nb_objects = 0
 
