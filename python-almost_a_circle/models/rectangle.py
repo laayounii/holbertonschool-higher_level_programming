@@ -53,4 +53,15 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         self.validate_integer("y", value)
-        self.__y = value    
+        self.__y = value
+        
+    def testing_integer(self, variable, value, test=True):
+        """ Testing the integers and tracking
+        errors like it was demanded in task 3
+        """
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(variable))
+        if test and value < 0:
+            raise ValueError("{} must be >= 0".format(variable))
+        elif not test and value <= 0:
+            raise ValueError("{} must be > 0".format(variable))
