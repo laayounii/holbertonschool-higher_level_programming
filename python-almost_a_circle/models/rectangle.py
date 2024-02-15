@@ -22,7 +22,6 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.validate_integer("width", value, False)
         self.__width = value
 
     @property
@@ -32,7 +31,6 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        self.validate_integer("height", value, False)
         self.__height = value
 
     @property
@@ -42,7 +40,6 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.validate_integer("x", value)
         self.__x = value
 
     @property
@@ -52,16 +49,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.validate_integer("y", value)
         self.__y = value
-        
-    def testing_integer(self, variable, value, test=True):
-        """ Testing the integers and tracking
-        errors like it was demanded in task 3
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(variable))
-        if test and value < 0:
-            raise ValueError("{} must be >= 0".format(variable))
-        elif not test and value <= 0:
-            raise ValueError("{} must be > 0".format(variable))
+
